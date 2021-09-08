@@ -1,0 +1,41 @@
+
+
+<div class ="row"> 
+  <div class = "col">
+    <h2 style="color : white;text-align: center;">Equipo de lokiteck</h2>
+  </div>
+  <div class = "col">
+      <button class = "btn btn-success" [routerLink]="['/empleado','nuevo']"> Agregar </button>
+  </div>
+</div>
+<table>
+  <tr>
+    <th>#</th>
+    <th>DNI</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Contacto</th>
+    <th>País</th>
+    <th>Disponibilidad</th>
+  </tr>
+  <tr *ngFor = "let empleado of empleados, let i = index ">
+    <th scope = "row"> {{i + 1}}</th>
+    <td> {{empleado.DNI}}</td>
+    <td>{{empleado.Nombre}}</td>
+    <td>{{empleado.Apellido}}</td>
+    <td>{{empleado.Contacto}}</td>
+    <td>{{empleado.Pais}}</td>
+    <td>
+      <span *ngIf = "empleado.Disponibilidad"class= "badge bg-success">Activo</span>
+      <span *ngIf = "!empleado.Disponibilidad "class= "badge bg-danger">Inactivo</span>
+
+    </td>
+    <td>
+      <button class="btn btn-warning btn-block" [routerLink] ="['/empleado',empleado.id]" >ver</button>
+  </td>
+  </tr>
+ 
+</table>
+
+
+  <button type="button" class="btn btn-primary btn-lg mt-5 md-3" [routerLink]="['/equipo']">Volver</button>

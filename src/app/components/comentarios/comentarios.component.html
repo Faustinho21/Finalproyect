@@ -1,0 +1,33 @@
+<div *ngIf = "ver"class="row g-2">
+  <div class="col-md">
+    <div class="form-floating">
+      <input type="email" class="form-control" id="floatingInputGrid"  >
+      <label for="floatingInputGrid">Email address</label>
+    </div>
+  </div>
+  <div class="col-md">
+    <div class="form-floating">
+      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+        <option selected>Elige tu tipo de comentario</option>
+        <option value="1">Sobre los productos</option>
+        <option value="2">Sobre los servicios</option>
+        <option value="3">Sobre la plataforma web</option>
+        <option value="3">Otros</option>
+      </select>
+      <label for="floatingSelectGrid">Comentario</label>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label" style = "color:white;">Comentario</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+  </div>
+  <button type="button" class="btn btn-primary" (click) = "mostrar()">Enviar</button>
+</div>
+
+<div *ngIf = "!ver"class="alert alert-info" role="alert">
+  Tu mensaje a sido enviado. Muchas Gracias :)
+</div>
+
+<div> 
+   <button type="button" class="btn btn-success" [routerLink] =" ['/body'] " style = "margin-top : 60px ;">Volver al inicio</button>
+</div>

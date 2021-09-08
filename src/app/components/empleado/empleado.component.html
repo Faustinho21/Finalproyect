@@ -1,0 +1,60 @@
+<div class ="row"> 
+  <div class = "col">
+      <h2 style = "color: white;">Empleado</h2>
+  </div>
+  <div class = "col">
+      <button class = "btn btn-outline-danger" [routerLink]="['/verequipo']"> Regresar </button>
+  </div>
+</div>
+
+
+
+
+<form class="mt-3">
+  <div class="form-group">
+    <label >Firebase ID</label>
+    <input class ="form-control" type="text" name ="id"[(ngModel)]="empleado.id" disabled> 
+    <small style="color: white;">Campo autogenerado</small>
+  </div>
+  <div class="form-group">
+    <label >Nombre</label>
+    <input class ="form-control" type="text" name ="nombre"[(ngModel)]="empleado.Nombre"> 
+
+  </div>
+
+  <div class="form-group">
+    <label >Apellidos</label>
+    <input class ="form-control" type="text" name ="apellido"[(ngModel)]="empleado.Apellido"> 
+
+  </div>
+
+  <div class="form-group">
+    <label >Contacto</label>
+    <input class ="form-control" type="number" name ="Contacto"[(ngModel)]="empleado.Contacto"> 
+
+  </div>
+  <div class="form-group">
+    <label >País</label>
+    <input class ="form-control" type="text" name ="Pais"[(ngModel)]="empleado.Pais"> 
+
+  </div>
+  <div class="form-group">
+    <label >DNI</label>
+    <input class ="form-control" type="text" name ="DNI"[(ngModel)]="empleado.DNI"> 
+
+  </div>
+  
+  <div class="form-group mt-3">
+    
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button class = "btn btn-outline-primary" (click)= "guardar()"> Guardar</button>
+      <button class = "btn btn-danger" (click)="eliminar(empleado.id)" >Eliminar</button>
+    </div>
+  </div>
+  <div class="col mt-5">
+    <button *ngIf = "!empleado.Disponibilidad" class = "btn btn-outline-primary" (click)= "activar()">Activar</button>
+    <button *ngIf = "empleado.Disponibilidad" class = "btn btn-outline-danger" (click)= "desactivar()">Desactivar</button>
+  </div>
+
+  
+</form>  

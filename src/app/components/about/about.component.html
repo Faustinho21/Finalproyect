@@ -1,0 +1,14 @@
+<div class="row row-cols-1 row-cols-md-2 g-4 ">
+  <div class="col " *ngFor = "let video of videos" >
+    <div class="card bg-dark text-white">
+      <img [src]="video.snippet.thumbnails.standard.url" class="card-img" >
+      <div class="card-img-overlay">
+        <h6 class="card-title">{{video.snippet.title}}</h6> 
+  </div>
+  <small class="text-muted"> {{video.snippet.publishedAt| date}} </small>
+ </div>
+ <button type= "button" class ="btn btn-success btn-block mt-2 mb-2" (click) = verVideo(video)>Ver Video...</button>
+</div>
+</div >
+    <button type= "button" class ="btn btn-primary btn-block btn-lg mt-2 mb-2 " style="margin-right:1000px;"(click) = "Goback()">Anterior</button>
+    <button type= "button" class ="btn btn-danger btn-block btn-lg mt-2 mb-2 "(click) = "Gonext()">Siguiente</button>

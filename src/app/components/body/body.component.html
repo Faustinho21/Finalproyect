@@ -1,0 +1,10 @@
+ 
+     <div class="row row-cols-1 row-cols-md-2 g-4 ">
+        <div class="col " *ngFor = "let locki of boddyComponent" >
+          <div class="card bg-dark text-white">
+            <img [src]="locki.foto" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h5 class="card-title">{{locki.nombre}}</h5>
+              <h6 class="card-text">{{locki.descripcion}}</h6>
+        </div>
+       </div>

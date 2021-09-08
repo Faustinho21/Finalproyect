@@ -1,0 +1,75 @@
+<div *ngIf = "boton" style="margin-bottom: 20px;">
+  <h1 style="color: aliceblue;">Busca el producto</h1>
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <input type="text" class="form-control mt-5 md-3" name="filterPost" placeholder="Search..." [(ngModel)]="filterPost">
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf = "ver" class="card-group">
+  <div *ngIf = "ver" class="mt-4" style ="margin-right: 50px;">
+    <div class="card text-white bg-dark mb-3" style="width: 350px; height: 235px;  ">
+    <img src="/assets/img/productos/keyboard-656722_1280.png" class="card-img-top" alt="...">
+    <div class="card-img-overlay">
+      <h4 class="card-title">Keyboard</h4>
+    </div>
+  </div>
+  <button type="button" class="btn btn-dark mt-2" (click) = "ver3()" style="width: 300px; height: 50px; margin-right:20px; margin-left:20px;" >Ver mas...</button>
+</div>
+
+<div  class="mt-4">
+  <div class="card text-white bg-dark mb-3" style="width: 350px; height: 235px; margin-right: 50px; ">
+    <img src="/assets/img/productos/mouse-5417888_1280.jpg" class="card-img-top" alt="...">
+    <div class="card-img-overlay">
+      <h4 class="card-title">Mouse</h4>
+    </div>
+  </div>
+  <button type="button" class="btn btn-dark mt-2" (click) = "ver1()"style="width: 300px; height: 50px; margin-right:20px; margin-left:20px;"  >Ver mas...</button>
+</div>
+
+<div class="mt-4">
+  <div class="card text-white bg-dark mb-3" style="width: 350px; height: 235px;   ">
+    <img src="/assets/img/productos/headphone-3085681_1280.jpg" class="card-img-top" alt="...">
+    <div class="card-img-overlay">
+      <h4 class="card-title">Headphones</h4>
+    </div>
+    </div>
+    <button type="button" class="btn btn-dark mt-2" (click) = "ver2()" style="width: 300px; height: 50px; margin-right:20px; margin-left:20px;"  >Ver mas...</button>
+
+  </div>
+</div>
+
+<div *ngIf = "producto1" class="card-group">
+  <div *ngFor = "let producto of ProductosComponent | busqueda : filterPost"class="card" style ="margin-right: 50px;">
+    <img [src]="producto.foto" class="card-img-top" style="width: auto;" >    
+    <div class="card-body">
+      <h5 class="card-title">{{producto.name}}</h5>
+      <p class="card-text">{{producto.description}}</p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf = "producto2" class="card-group">
+  <div *ngFor = "let producto of Productos3Component | busqueda : filterPost"class="card" style ="margin-right: 50px;">
+    <img [src]="producto.foto" class="card-img-top" style="width: auto;" >    
+    <div class="card-body">
+      <h5 class="card-title">{{producto.name}}</h5>
+      <p class="card-text">{{producto.description}}</p>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf = "producto3" class="card-group" >
+  <div *ngFor = "let producto of Productos2Component | busqueda : filterPost"class="card" style ="margin-right: 50px;">
+    <img [src]="producto.foto" class="card-img-top" style="width: auto;" >    
+    <div class="card-body">
+      <h5 class="card-title">{{producto.name}}</h5>
+      <p class="card-text">{{producto.description}}</p>
+    </div>
+  </div>
+</div>
+
+<button *ngIf= "boton"type="button" class="btn btn-primary btn-lg mt-5 md-3" (click)="volver()">Volver</button>
